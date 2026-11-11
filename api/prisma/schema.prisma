@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Medicao {
+  id           Int      @id @default(autoincrement())
+  data         DateTime @default(now())
+  temperatura  Float    @db.Float
+  umidade      Float    @db.Float
+  luminosidade Float    @db.Float
+
+  @@index([data])
+  @@map("medicao")
+}

@@ -1,0 +1,19 @@
+{
+  "name": "monitoramento-estufa-api",
+  "version": "1.1.0",
+  "description": "API de monitoramento ambiental da estufa (ESP32 + DHT11 + LDR) com Prisma + MySQL",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "db:migrate": "prisma migrate dev --name init",
+    "db:deploy": "prisma migrate deploy",
+    "db:studio": "prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "prisma": "^5.22.0"
+  }
+}

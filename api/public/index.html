@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monitoramento da Estufa</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <div>
+        <h1>Estufa de cogumelos</h1>
+        <p class="atualizacao" id="atualizacao">Aguardando dados...</p>
+      </div>
+      <div class="filtro">
+        <label for="limite">Mostrar</label>
+        <select id="limite">
+          <option value="30">últimas 30 leituras</option>
+          <option value="60" selected>últimas 60 leituras</option>
+          <option value="180">últimas 180 leituras</option>
+          <option value="500">últimas 500 leituras</option>
+        </select>
+      </div>
+    </header>
+
+    <ul class="alertas" id="alertas"></ul>
+
+    <section class="leituras" aria-label="Última leitura">
+      <div class="leitura" id="card-temperatura">
+        <span class="leitura-nome">Temperatura</span>
+        <span class="leitura-valor" id="valor-temperatura">--</span>
+        <span class="leitura-faixa" id="faixa-temperatura"></span>
+      </div>
+      <div class="leitura" id="card-umidade">
+        <span class="leitura-nome">Umidade</span>
+        <span class="leitura-valor" id="valor-umidade">--</span>
+        <span class="leitura-faixa" id="faixa-umidade"></span>
+      </div>
+      <div class="leitura" id="card-luminosidade">
+        <span class="leitura-nome">Luminosidade</span>
+        <span class="leitura-valor" id="valor-luminosidade">--</span>
+        <span class="leitura-faixa" id="faixa-luminosidade"></span>
+      </div>
+    </section>
+
+    <section class="graficos">
+      <div class="grafico"><canvas id="grafico-temperatura"></canvas></div>
+      <div class="grafico"><canvas id="grafico-umidade"></canvas></div>
+      <div class="grafico"><canvas id="grafico-luminosidade"></canvas></div>
+    </section>
+
+    <p class="rodape">Os dados são atualizados a cada 10 segundos.</p>
+  </main>
+</body>
+</html>
