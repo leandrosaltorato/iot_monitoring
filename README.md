@@ -28,10 +28,7 @@ Sistema de monitoramento ambiental com IoT. Um **ESP32** mede **temperatura**, *
 
 Fora dessas faixas, o cartão da grandeza fica destacado e uma mensagem aparece na lista de alertas
 
-## Fotos do protótipo
-
-
-![Protótipo montado](docs/prototipo-1.jpg)
+#
 
 ## Tecnologias
 
